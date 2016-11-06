@@ -1,0 +1,16 @@
+<ul>
+   
+   <% for(var i= 0; i<comments.length; i++){ %>
+        <li>
+    <span> the name is : <%= comments[i].author %></span> <br>
+    <span> the content is: <%= comments[i].content %></span> <br>
+     </li>
+   <% } %>
+  
+  <!--use forEach!!!!-->
+  <% comments.forEach(function(comment){ %>
+      <li>the name is: <%= comment.author %>
+      <span>the content is: <%= comment.content %></span><br> 
+      </li>
+  <% }) %>
+</ul>
