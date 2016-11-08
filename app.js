@@ -42,7 +42,7 @@ app.get('/comments/:id', function(req, res){
 
 
 // app.get('/:animal', function(req,res){
-//     var animals = {
+//     var animals = {=
 //         dog: 'woof',
 //         cat: 'mew'
 //     } ; 

@@ -1,0 +1,13 @@
+<html>
+    <head>
+        <title>animal page</title>
+        <link rel="stylesheet" type="text/css" href="css/app.css">
+    </head>
+</html>
+<h1>we are at animal page!</h1>
+<span> you passed in <%= paramVariable %> </span>
+
+<% var resultObj = animals[paramVariable] ; %>
+
+<span>the animal sound is <%= resultObj.sound %> </span> <br></br>
+<span>the animal msg is:  <%= resultObj.msg %> </span>
