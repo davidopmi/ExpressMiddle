@@ -1,0 +1,18 @@
+<!--list out all the friends we have
+name: name
+age: age
+-->
+<% friends.forEach(function(friend){ %>
+    <h1>name: <%=friend.name %></h1>
+    <h1>sex: <%=friend.sex %></h1>
+<% }) %>
+
+<form action="/addfriend" method="POST">
+    name: <br/>
+    <input type="text" name="name"  placeholder="provide name"></input>
+    <br/>
+    sex: <br/>
+    <input type="text" name="sex" placeholder="provide sex"></input>
+    <br/>
+    <button>add new friend</button>
+</form>

@@ -1,5 +1,7 @@
 // step 1
 var express = require("express");
+var path = require('path');
+var ejs = require("ejs");
 var app = express();
 var animals = {
     dog: {
@@ -16,8 +18,12 @@ var animals = {
     }
 };
 // middleware
-app.use(express.static("public")); 
+app.use(express.static(path.resolve(__dirname, "public")));
+app.set("views", path.resolve(__dirname, "views")) ;
 app.set("view engine","ejs") ;
+
+// this is to render html by using EJS template
+app.engine('html', ejs.renderFile) ;
 
 // step 2: set up route
 // root route: home page!!!
@@ -26,12 +32,20 @@ app.get("/", function(req, res) {
 });
 
 // dog, cat, pig: /dog  /cat /pig
-app.get("/:animal", function(req, res) {
+app.get("/animal/:animal", function(req, res) {
     var paramValue = req.params.animal;
     res.render("animal", {
         paramVariable: paramValue,
         animals: animals
     });
+})
+// res.send: could only show text. or html tag
+// app.get("/html", function(req, res) {
+//      res.sendFile(path.join(__dirname + '/views/testhtml.html'));
+// })
+
+app.get("/html", function(req, res) {
+    res.render('testhtml.html');
 })
 
 app.get("*", function(req, res) {
