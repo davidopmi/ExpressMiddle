@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<states>
+    <state>
+        <name>california</name>
+        <img>/image/ca.png</img>
+    </state>
+    <state>
+        <name>new york</name>
+        <img>/image/ny.png</img>
+    </state>
+    <state>
+        <name>texas</name>
+        <img>/image/tx.png</img>
+    </state>
+</states>
