@@ -1,0 +1,8 @@
+<h1>you asked for <%= param%></h1>
+<h1>now you get it:</h1>
+
+<% result.forEach(function(movie){ %>
+   <li><span> <%= movie.Title %> </span> - <span><%= movie.Year %></span> <br/>
+       <image src=<%=movie.Poster%>></image>
+   </li>   
+<% }) %>

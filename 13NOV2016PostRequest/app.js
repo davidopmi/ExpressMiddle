@@ -4,6 +4,10 @@ var bodyParser = require("body-parser") ;
 var app = express() ; 
 app.use(bodyParser.urlencoded({extended:true})) ;
 // you tell app you want ejs module to render your view
+var path = require("path") ; 
+
+app.use(express.static(path.resolve(__dirname, "public"))) ; 
+app.set("views", path.resolve(__dirname, "views"));
 app.set("view engine", "ejs") ; 
 
 // =====create some fake data ===
