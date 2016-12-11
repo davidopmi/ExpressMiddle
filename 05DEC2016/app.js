@@ -1,7 +1,7 @@
 //1: 
 var mongoose = require("mongoose");
 
-//2: connect to database: myDB 
+//2: connect to database: dogDB=== please make sure you started mongod 
 mongoose.connect('mongodb://localhost/dogDB');
 
 //3: define a schema 
@@ -57,9 +57,6 @@ Dog.find({},function(err,dogs ){
     }
 })
 
-
-
-
 // var dog2 = new Dog({
 //   name :"d2",
 //   sex:"female",
@@ -73,6 +70,19 @@ Dog.find({},function(err,dogs ){
 // }) ; 
 // dog1.save() ;
 
+
+/** As of "mongoose": ">=2.7.1" you can remove the document directly with the .remove() method 
+ * rather than finding the document and then removing it which seems to me more efficient and easy to maintain.
+ Model.remove({ _id: req.body.id }, function(err) {
+    if (!err) {
+            message.type = 'notification!';
+    }
+    else {
+            message.type = 'error';
+    }
+});
+ *
+ */ 
 
 
 
